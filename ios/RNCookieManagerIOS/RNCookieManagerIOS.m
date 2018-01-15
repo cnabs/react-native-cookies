@@ -116,7 +116,7 @@ RCT_EXPORT_METHOD(getAll:(RCTPromiseResolveBlock)resolve
     resolve(cookies);
 }
 
-- (NSString )dateString: (NSDate )date {
+- (NSString *)dateString: (NSDate *)date {
     NSString *dateString;
     if (date) {
         NSDateFormatter *dateFormatter = [NSDateFormatter new];
