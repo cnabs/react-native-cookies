@@ -110,10 +110,22 @@ RCT_EXPORT_METHOD(getAll:(RCTPromiseResolveBlock)resolve
         [d setObject:c.name forKey:@"name"];
         [d setObject:c.domain forKey:@"domain"];
         [d setObject:c.path forKey:@"path"];
-        [d setObject:c.expiresDate forKey:@"expiresDate"];
+        [d setObject:[self dateString:c.expiresDate] forKey:@"expiresDate"];
         [cookies setObject:d forKey:c.name];
     }
     resolve(cookies);
+}
+
+- (NSString )dateString: (NSDate )date {
+    NSString *dateString;
+    if (date) {
+        NSDateFormatter *dateFormatter = [NSDateFormatter new];
+        dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+        dateString = [dateFormatter stringFromDate:date];
+    } else {
+        dateString = @"";
+    }
+    return dateString;
 }
 
 @end
