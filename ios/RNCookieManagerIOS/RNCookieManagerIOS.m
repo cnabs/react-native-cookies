@@ -110,7 +110,7 @@ RCT_EXPORT_METHOD(getAll:(RCTPromiseResolveBlock)resolve
         [d setObject:c.name forKey:@"name"];
         [d setObject:c.domain forKey:@"domain"];
         [d setObject:c.path forKey:@"path"];
-        [d setObject:c.expiration forKey:@"expiration"];
+        [d setObject:c.expiresDate forKey:@"expiresDate"];
         [cookies setObject:d forKey:c.name];
     }
     resolve(cookies);
